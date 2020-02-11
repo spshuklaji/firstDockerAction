@@ -1,0 +1,21 @@
+name: FirstDockerWorkflow
+
+on: 
+  schedule:
+    - cron:  '*/3 * * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    name: Shukla's Greeting
+    steps:
+      - name: checking out firstDockerAction
+        uses: actions/checkout@v2
+      - name: Greeting Action step
+        uses: ./
+        id: firstGreet
+        with:
+          who-to-greet: "Azul Systems" 
+      - name: Get the output time
+        run: echo "The time was ${{ steps.firstGreet.outputs.time }}"
