@@ -2,7 +2,7 @@ name: FirstDockerWorkflow
 
 on: 
   schedule:
-    - cron:  '*/3 * * * *'
+    - cron:  '*/6 * * * *'
 
 jobs:
   build:
